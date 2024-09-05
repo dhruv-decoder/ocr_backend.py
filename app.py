@@ -32,6 +32,8 @@ def process_ocr():
         for bbox, text, prob in results:
             if "college" in text.lower():
                 extracted_data["college"] = text
+            if "2022" in text or "2023" in text:
+                extracted_data["year"] = text
             if extracted_data["name"] is None:
                 extracted_data["name"] = text
 
@@ -42,3 +44,4 @@ def process_ocr():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
