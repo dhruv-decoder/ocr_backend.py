@@ -43,7 +43,8 @@ export default function VerificationDocuments() {
     formData.append('file', selectedFile);
 
     try {
-      const response = await fetch('https://your-railway-app-url.up.railway.app/process-ocr', {
+      const response = await fetch('https://ocrbackendpy-production.up.railway.app/process-ocr'
+, {
         method: 'POST',
         body: formData,
       });
